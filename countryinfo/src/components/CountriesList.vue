@@ -1,4 +1,4 @@
-<!-- eslint-disable prettier/prettier -->
+<!--  eslint-disable  -->
 <template>
   <div class="container">
     <input
@@ -20,14 +20,14 @@
 <!-- eslint-disable prettier/prettier -->
 
 <script setup lang="ts">
-import { ref, onMounted, computed } from 'vue';
-import { useCountriesStore } from '../store/countries'; // Asegúrate de que la ruta sea correcta
-import { useRouter } from 'vue-router';
+import { ref, onMounted, computed } from "vue";
+import { useCountriesStore } from "../store/countries"; // Asegúrate de que la ruta sea correcta
+import { useRouter } from "vue-router";
 
 const router = useRouter();
 
-const selectCountry = (countryCode) => {
-  router.push({ name: 'countryID', params: { code: countryCode } });
+const selectCountry = (countryCode: string) => {
+  router.push({ name: "countryID", params: { code: countryCode } });
 };
 
 // Definir el tipo de país
@@ -43,7 +43,7 @@ onMounted(async () => {
 });
 
 // Definir la variable para la búsqueda
-const searchQuery = ref<string>('');
+const searchQuery = ref<string>("");
 
 // Computed para filtrar los países según la búsqueda
 const filteredCountries = computed(() => {
@@ -53,7 +53,7 @@ const filteredCountries = computed(() => {
 
   // Filtrar los países que coinciden con la consulta
   return countriesService.Countries.filter((country) =>
-    country.name.toLowerCase().includes(searchQuery.value.toLowerCase()),
+    country.name.toLowerCase().includes(searchQuery.value.toLowerCase())
   );
 });
 </script>
