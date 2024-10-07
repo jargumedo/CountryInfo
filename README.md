@@ -25,7 +25,10 @@ In this file, you will find instructions for getting the project on your machine
 2. **Navigate to the repository**
    ```bash
    cd CountryInfo
-   
+
+   **Another command**
+   ```bash
+   cd countryinfo
 # Install the dependencies
 npm install
 
